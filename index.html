@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K Audiovisual — Sound &amp; Lighting Rentals</title>
+  <meta name="description" content="K Audiovisual — professional sound and lighting equipment rentals for events across the Greater Toronto Area." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #0e1116;   /* midnight blue-charcoal */
+      --panel:     #161b22;
+      --amber:     #f4a52a;   /* tungsten / follow-spot warmth */
+      --amber-hi:  #ffc164;
+      --ink:       #f2eee6;   /* warm off-white */
+      --muted:     #8a909b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1.25rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Signature: a soft amber follow-spot pool washing down from above */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -28vmin;
+      left: 50%;
+      width: 80vmin;
+      height: 80vmin;
+      transform: translateX(-50%);
+      background: radial-gradient(circle at 50% 30%,
+                  rgba(244,165,42,0.20) 0%,
+                  rgba(244,165,42,0.07) 38%,
+                  transparent 68%);
+      pointer-events: none;
+      filter: blur(2px);
+    }
+
+    main {
+      position: relative;
+      text-align: center;
+      max-width: 40rem;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.4rem;
+    }
+
+    h1 {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: 0.01em;
+      font-size: clamp(3.2rem, 14vw, 7.5rem);
+      text-transform: uppercase;
+    }
+    h1 .k { color: var(--amber-hi); }
+
+    /* ↓↓↓ EDIT THIS LINE to test the publish loop (e.g. change the tagline) ↓↓↓ */
+    .tagline {
+      margin: 1.4rem auto 0;
+      max-width: 30rem;
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    /* ↑↑↑ EDIT THIS LINE to test the publish loop ↑↑↑ */
+
+    /* Equalizer bars — a quiet, subject-true motion cue */
+    .meter {
+      margin: 2.6rem auto 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 6px;
+      height: 38px;
+    }
+    .meter span {
+      width: 5px;
+      background: var(--amber);
+      border-radius: 2px;
+      opacity: 0.85;
+      animation: eq 1.1s ease-in-out infinite;
+    }
+    .meter span:nth-child(1) { height: 40%; animation-delay: -0.9s; }
+    .meter span:nth-child(2) { height: 90%; animation-delay: -0.2s; }
+    .meter span:nth-child(3) { height: 60%; animation-delay: -0.55s; }
+    .meter span:nth-child(4) { height: 100%; animation-delay: -0.05s; }
+    .meter span:nth-child(5) { height: 50%; animation-delay: -0.7s; }
+    .meter span:nth-child(6) { height: 78%; animation-delay: -0.35s; }
+    .meter span:nth-child(7) { height: 35%; animation-delay: -0.5s; }
+
+    @keyframes eq {
+      0%, 100% { transform: scaleY(0.35); }
+      50%      { transform: scaleY(1);    }
+    }
+    .meter span { transform-origin: bottom; }
+
+    footer {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+    footer strong { color: var(--ink); font-weight: 500; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .meter span { animation: none; transform: scaleY(0.7); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Greater Toronto Area</p>
+
+    <h1><span class="k">K</span> Audiovisual</h1>
+
+    <p class="tagline">Professional sound &amp; lighting rentals for events — coming soon.</p>
+
+    <div class="meter" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </main>
+
+  <footer>
+    <strong>K Audiovisual</strong> &nbsp;·&nbsp; Sound &amp; Lighting Rentals &nbsp;·&nbsp; Site under construction
+  </footer>
+</body>
+</html>

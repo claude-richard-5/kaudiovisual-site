@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>K Audiovisual — Sound &amp; Lighting Rentals · GTA</title>
+  <meta name="description" content="Professional sound and lighting rentals for events across the Greater Toronto Area. Pick up the gear, or we deliver and set it up." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;900&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#f6f6f3; --surface:#ffffff; --ink:#15181d; --ink-soft:#3a3e45;
+      --muted:#6c7079; --line:rgba(21,24,29,.13); --line-2:rgba(21,24,29,.22);
+      --amber:#b5710c; --amber-soft:#e6a33b; --sidebar:260px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .display{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:.01em}
+    .eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--amber);font-weight:600}
+
+    /* placeholder photo */
+    .photo{position:relative;background:linear-gradient(135deg,#ecebe6 0%,#e3e1d9 60%,#e8ddc8 100%);border:1px solid var(--line);overflow:hidden}
+    .photo::after{content:attr(data-cap);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:#9a958a;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+    .photo .ico{position:absolute;top:14px;left:16px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#a98a4e;z-index:2}
+
+    /* ---------- LEFT SIDEBAR NAV ---------- */
+    .sidebar{position:fixed;top:0;left:0;width:var(--sidebar);height:100vh;background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:1.6rem 0;overflow-y:auto;z-index:60}
+    .sidebar .brand{font-family:"Big Shoulders Display",sans-serif;font-weight:900;font-size:1.55rem;letter-spacing:.02em;text-transform:uppercase;padding:0 1.5rem 1.4rem;border-bottom:1px solid var(--line)}
+    .sidebar .brand .k{color:var(--amber)}
+    .sidebar .brand small{display:block;font-family:"Hanken Grotesk";font-weight:500;font-size:.62rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;margin-top:.45rem}
+    nav.side{padding:1.2rem 0;flex:1}
+    nav.side a{display:block;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:.55rem 1.5rem;border-left:2px solid transparent;transition:all .18s}
+    nav.side a:hover{color:var(--ink)}
+    nav.side a.active{color:var(--ink);border-left-color:var(--amber);font-weight:600}
+    nav.side .group{margin-top:.2rem}
+    nav.side .sub a{padding-left:2.4rem;font-size:.74rem;letter-spacing:.1em;color:#9aa0a8}
+    nav.side .sub a:hover{color:var(--ink-soft)}
+    nav.side .sub a.active{color:var(--ink);border-left-color:var(--amber-soft)}
+    .side-foot{padding:1.2rem 1.5rem 0;border-top:1px solid var(--line)}
+    .side-foot .btn{display:block;text-align:center}
+    .side-foot .deet{margin-top:1rem;font-size:.74rem;color:var(--muted);line-height:1.7}
+    .side-foot .deet b{color:var(--ink)}
+    .side-foot .social{margin-top:.9rem;display:flex;gap:1rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .side-foot .social a:hover{color:var(--amber)}
+
+    .btn{display:inline-block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:.75rem 1.2rem;background:var(--ink);color:#fff;border:1px solid var(--ink);transition:all .2s;cursor:pointer}
+    .btn:hover{background:var(--amber);border-color:var(--amber)}
+    .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+    .btn.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+    /* mobile top bar (hidden on desktop) */
+    .topbar{display:none;position:sticky;top:0;z-index:60;background:var(--surface);border-bottom:1px solid var(--line);align-items:center;justify-content:space-between;padding:.9rem 1.25rem}
+    .topbar .brand{font-family:"Big Shoulders Display",sans-serif;font-weight:900;font-size:1.25rem;text-transform:uppercase}
+    .topbar .brand .k{color:var(--amber)}
+    .menu-btn{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;border:1px solid var(--line-2);background:transparent;padding:.5rem .8rem;cursor:pointer;color:var(--ink)}
+
+    /* ---------- MAIN ---------- */
+    .main{margin-left:var(--sidebar)}
+    .inner{max-width:1060px;margin:0 auto;padding:0 clamp(1.5rem,4vw,3.5rem)}
+
+    .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--line)}
+    .hero .photo{position:absolute;inset:0;border:0}
+    .hero .photo::after{display:none}
+    .hero-inner{position:relative;padding:4rem 0 4rem}
+    .hero h1{font-size:clamp(2.8rem,8vw,6rem);margin:.9rem 0 0;max-width:13ch}
+    .hero h1 .amber{color:var(--amber)}
+    .hero p{margin:1.3rem 0 0;max-width:46ch;color:var(--ink-soft);font-size:clamp(1rem,2.2vw,1.2rem)}
+    .hero .cta{margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap}
+
+    .strip{border-bottom:1px solid var(--line);background:var(--surface)}
+    .strip .inner{display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:center;align-items:center;padding:1.3rem clamp(1.5rem,4vw,3.5rem);font-family:"Big Shoulders Display",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(1rem,2.2vw,1.3rem)}
+    .strip b{font-weight:600}
+    .strip .sep{color:var(--amber)}
+
+    .feature{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);background:var(--surface)}
+    .feature .photo{min-height:400px}
+    .feature .copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,4.5vw,4rem)}
+    .feature.flip .photo{order:2}
+    .feature .num{font-family:"Big Shoulders Display",sans-serif;font-weight:700;color:var(--amber);font-size:.82rem;letter-spacing:.2em}
+    .feature h2{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;line-height:.95;font-size:clamp(1.9rem,4vw,3rem);margin:.5rem 0 0}
+    .feature .lead{color:var(--ink-soft);margin:1rem 0 1.5rem;max-width:42ch}
+    .feature ul{list-style:none;margin:0 0 1.6rem;display:flex;flex-wrap:wrap;gap:.5rem .8rem}
+    .feature ul li{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line-2);padding:.35rem .7rem}
+    .arrowlink{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--amber)}
+    .arrowlink:hover{color:var(--ink)}
+    @media(max-width:820px){.feature{grid-template-columns:1fr}.feature.flip .photo{order:0}.feature .photo{min-height:260px}}
+
+    .tailored{padding:clamp(3.5rem,7vw,5.5rem) 0;text-align:center;background:var(--bg)}
+    .tailored h2{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2rem,5vw,3.4rem);line-height:.95;margin:.8rem auto 0;max-width:18ch}
+    .tailored p.sub{color:var(--ink-soft);max-width:54ch;margin:1.1rem auto 0;font-size:1.05rem}
+    .options{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.6rem;text-align:left}
+    .opt{background:var(--surface);border:1px solid var(--line);padding:clamp(1.5rem,3vw,2.2rem)}
+    .opt .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+    .opt h3{font-family:"Big Shoulders Display",sans-serif;font-weight:700;text-transform:uppercase;font-size:1.5rem;margin:.4rem 0 .6rem}
+    .opt p{color:var(--ink-soft)}
+    @media(max-width:760px){.options{grid-template-columns:1fr}}
+
+    .reviews{padding:clamp(3rem,6vw,4.5rem) 0;text-align:center;background:var(--surface);border-bottom:1px solid var(--line)}
+    .reviews .ph{margin:1.4rem auto 0;max-width:60ch;border:1px dashed var(--line-2);padding:2rem 1.5rem;color:var(--muted)}
+    .reviews .ph strong{color:var(--ink);font-weight:600}
+
+    .contact{padding:clamp(3.5rem,7vw,5.5rem) 0;background:var(--bg)}
+    .contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+    .contact h2{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2rem,4.5vw,3.2rem);line-height:.95}
+    .contact .lead{color:var(--ink-soft);margin:1rem 0 0;max-width:40ch}
+    .field{margin-bottom:.9rem}
+    .field label{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+    .field input,.field textarea{width:100%;background:var(--surface);border:1px solid var(--line-2);color:var(--ink);padding:.7rem .8rem;font-family:inherit;font-size:.95rem}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--amber)}
+    @media(max-width:760px){.contact .grid{grid-template-columns:1fr}}
+
+    .foot{background:var(--surface);border-top:1px solid var(--line);padding:2.4rem 0;color:var(--muted);font-size:.8rem}
+    .foot .inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+
+    /* responsive: collapse sidebar to top bar */
+    @media(max-width:900px){
+      .sidebar{position:fixed;transform:translateX(-100%);transition:transform .25s;box-shadow:0 0 40px rgba(0,0,0,.12)}
+      .sidebar.open{transform:translateX(0)}
+      .topbar{display:flex}
+      .main{margin-left:0}
+      .hero{min-height:62vh}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sidebar{transition:none}}
+  </style>
+</head>
+<body>
+
+  <!-- mobile top bar -->
+  <div class="topbar">
+    <a class="brand" href="#top"><span class="k">K</span> Audiovisual</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">Menu</button>
+  </div>
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#top"><span class="k">K</span> Audiovisual<small>Sound &amp; Light · GTA</small></a>
+    <nav class="side">
+      <a href="#top" data-spy="top">Home</a>
+      <div class="group">
+        <a href="#packages" data-spy="packages">Packages</a>
+        <div class="sub">
+          <a href="#p1" data-spy="p1">Social &amp; Speech</a>
+          <a href="#p2" data-spy="p2">Full Event &amp; Band</a>
+          <a href="#lighting" data-spy="lighting">Lighting</a>
+          <a href="#wedding" data-spy="wedding">The Wedding</a>
+        </div>
+      </div>
+      <a href="#how" data-spy="how">How it works</a>
+      <a href="#reviews" data-spy="reviews">Reviews</a>
+      <a href="#contact" data-spy="contact">Contact</a>
+    </nav>
+    <div class="side-foot">
+      <a class="btn" href="#contact">Request a quote</a>
+      <div class="deet"><b>hello@kaudiovisual.ca</b><br>Toronto &amp; the GTA<br>By appointment</div>
+      <div class="social"><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <section class="hero" id="top">
+      <div class="photo" data-cap=""><span class="ico">Photo · hero</span></div>
+      <div class="inner hero-inner">
+        <span class="eyebrow">Sound &amp; Lighting Rentals · Greater Toronto Area</span>
+        <h1 class="display">Event-ready <span class="amber">sound &amp; light.</span></h1>
+        <p>Professional gear for weddings, bands, receptions and galas across the GTA. Pick it up yourself, or we deliver, rig, and line-check — you run the show.</p>
+        <div class="cta">
+          <a class="btn" href="#packages">See the packages</a>
+          <a class="btn ghost" href="#contact">Request a quote</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip"><div class="inner"><b>Professional gear</b><span class="sep">/</span><b>Lean pricing</b><span class="sep">/</span><b>Delivered &amp; set up</b></div></div>
+
+    <section id="packages">
+      <div class="feature" id="p1">
+        <div class="photo" data-cap="[ Photo: Package 1 kit — powered tops, a small mixer, two mics, on stands ]"><span class="ico">Photo · package one</span></div>
+        <div class="copy">
+          <span class="num">PACKAGE ONE</span>
+          <h2 class="display">Social &amp; Speech</h2>
+          <p class="lead">Clean, reliable sound for speeches, ceremonies, small parties and acoustic sets. Up to roughly 100 guests.</p>
+          <ul><li>Powered speakers</li><li>Compact mixer</li><li>Wired &amp; wireless mics</li><li>All cabling &amp; stands</li></ul>
+          <a class="arrowlink" href="#contact">What's included →</a>
+        </div>
+      </div>
+
+      <div class="feature flip" id="p2">
+        <div class="photo" data-cap="[ Photo: the QSC system — two K12 tops + two KSub subs — set up at a reception ]"><span class="ico">Photo · package two</span></div>
+        <div class="copy">
+          <span class="num">PACKAGE TWO</span>
+          <h2 class="display">Full Event &amp; Band</h2>
+          <p class="lead">The flagship QSC system with subs and a 16-channel console — built for live bands, DJs, receptions and galas of 100–300.</p>
+          <ul><li>QSC tops + subs</li><li>16-ch console</li><li>Stage monitors</li><li>Full mic package</li></ul>
+          <a class="arrowlink" href="#contact">What's included →</a>
+        </div>
+      </div>
+
+      <div class="feature" id="lighting">
+        <div class="photo" data-cap="[ Photo: amber PAR wash on a draped wall / dance floor at night ]"><span class="ico">Photo · lighting</span></div>
+        <div class="copy">
+          <span class="num">ADD-ON</span>
+          <h2 class="display">Lighting</h2>
+          <p class="lead">Layer light onto any audio package — from a warm wash that sets the mood to movement and haze for the dance floor.</p>
+          <ul><li>PAR wash</li><li>Scanners</li><li>Haze / fog</li><li>Dimmer control</li></ul>
+          <a class="arrowlink" href="#contact">Add to a package →</a>
+        </div>
+      </div>
+
+      <div class="feature flip" id="wedding">
+        <div class="photo" data-cap="[ Photo: a wedding reception — head table, warm uplighting, PA discreetly placed ]"><span class="ico">Photo · the wedding</span></div>
+        <div class="copy">
+          <span class="num">SIGNATURE BUNDLE</span>
+          <h2 class="display">The Wedding</h2>
+          <p class="lead">A ready-made package for the day: ceremony sound, speeches and toasts, a dance-floor system, and a warm room wash — delivered and set up.</p>
+          <ul><li>Ceremony + reception</li><li>Wireless mics</li><li>Dance-floor PA</li><li>Room wash</li></ul>
+          <a class="arrowlink" href="#contact">Plan your day →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="tailored">
+      <div class="inner">
+        <span class="eyebrow">Built around your event</span>
+        <h2 class="display">Tailored to the room, the crowd, and the night.</h2>
+        <p class="sub">Tell us the venue, the headcount, and what's happening — we match the right gear and one of two ways to get it to you.</p>
+        <div class="options">
+          <div class="opt">
+            <span class="tag">Option 01 · DIY</span>
+            <h3 class="display">Pick up</h3>
+            <p>Collect your package from our GTA storage, set it up yourself, and bring it back. The leanest price, for the hands-on host or working band.</p>
+          </div>
+          <div class="opt">
+            <span class="tag">Option 02 · Done for you</span>
+            <h3 class="display">Delivered &amp; set up</h3>
+            <p>We deliver, rig, and line-check on site, then you run the show during your event. We come back to strike. No operator needed by default.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="inner">
+        <span class="eyebrow">Client feedback</span>
+        <div class="ph"><strong>Reviews will appear here as they come in.</strong><br>As the first events go out, real client quotes — name, event type, and city — replace this block.</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="inner grid">
+        <div>
+          <span class="eyebrow">Get a quote</span>
+          <h2 class="display">Tell us about your event.</h2>
+          <p class="lead">Send the date, venue, and rough headcount and we'll come back with a package and a flat price for the day.</p>
+        </div>
+        <div>
+          <div class="field"><label>Name</label><input type="text" placeholder="Your name" /></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
+          <div class="field"><label>Event date &amp; venue</label><input type="text" placeholder="e.g. Aug 16 · The Symes, Toronto" /></div>
+          <div class="field"><label>What are you planning?</label><textarea rows="4" placeholder="Headcount, type of event, any gear you know you need…"></textarea></div>
+          <a class="btn" href="#" onclick="return false">Send request</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot"><div class="inner"><span>© 2026 K Audiovisual · Toronto / GTA</span><span>Sound &amp; lighting rentals</span></div></footer>
+
+  </div>
+
+  <script>
+    var sb=document.getElementById('sidebar'), mb=document.getElementById('menuBtn');
+    if(mb){mb.addEventListener('click',function(){sb.classList.toggle('open');});}
+    document.querySelectorAll('nav.side a').forEach(function(a){a.addEventListener('click',function(){sb.classList.remove('open');});});
+
+    var links={}; document.querySelectorAll('nav.side a[data-spy]').forEach(function(a){links[a.getAttribute('data-spy')]=a;});
+    var spied=['top','p1','p2','lighting','wedding','how','reviews','contact'];
+    var groups={p1:'packages',p2:'packages',lighting:'packages',wedding:'packages'};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var id=e.target.id;
+          Object.values(links).forEach(function(l){l.classList.remove('active');});
+          if(links[id])links[id].classList.add('active');
+          if(groups[id]&&links[groups[id]])links[groups[id]].classList.add('active');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    spied.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  </script>
+</body>
+</html>

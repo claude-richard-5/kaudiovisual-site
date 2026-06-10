@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K Audiovisual — Sound &amp; Lighting Rentals · GTA</title>
+    <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Professional sound and lighting rentals for events across the Greater Toronto Area. Pick up the gear, or we deliver and set it up." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;900&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0e1116; --bg2:#11161d; --panel:#161c24;
+      --amber:#f4a52a; --amber-hi:#ffc164;
+      --ink:#f3efe7; --muted:#9aa1ad; --line:rgba(243,239,231,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+    .eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--amber);font-weight:600}
+    .display{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:.01em}
+
+    /* placeholder photo zone */
+    .photo{position:relative;background:linear-gradient(135deg,#12171f 0%,#1c2530 55%,#3a2d18 100%);border:1px solid var(--line);overflow:hidden}
+    .photo::after{content:attr(data-cap);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:rgba(243,239,231,.55);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+    .photo .ico{position:absolute;top:14px;left:16px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,165,42,.7)}
+
+    /* header */
+    header{position:sticky;top:0;z-index:50;background:rgba(14,17,22,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .brand{font-family:"Big Shoulders Display",sans-serif;font-weight:900;font-size:1.45rem;letter-spacing:.02em;text-transform:uppercase}
+    .brand .k{color:var(--amber-hi)}
+    .nav ul{display:flex;gap:2rem;list-style:none}
+    .nav ul a{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+    .nav ul a:hover{color:var(--ink)}
+    .btn{display:inline-block;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:.7rem 1.2rem;border:1px solid var(--amber);color:var(--amber-hi);transition:all .2s}
+    .btn:hover{background:var(--amber);color:#1a1206}
+    .btn.solid{background:var(--amber);color:#1a1206;border-color:var(--amber)}
+    .btn.solid:hover{background:var(--amber-hi);border-color:var(--amber-hi)}
+    @media(max-width:760px){.nav ul{display:none}}
+
+    /* hero */
+    .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;background:linear-gradient(160deg,#10151c 0%,#191007 130%);overflow:hidden}
+    .hero::before{content:"";position:absolute;top:-20vmin;right:-10vmin;width:70vmin;height:70vmin;background:radial-gradient(circle at 50% 40%,rgba(244,165,42,.22),transparent 65%);pointer-events:none}
+    .hero .photo{position:absolute;inset:0;border:0}
+    .hero .photo::after{display:none}
+    .hero-inner{position:relative;padding:4rem 0 4.5rem}
+    .hero h1{font-size:clamp(2.8rem,9vw,6.5rem);margin:.9rem 0 0;max-width:14ch}
+    .hero h1 .amber{color:var(--amber-hi)}
+    .hero p{margin:1.4rem 0 0;max-width:46ch;color:var(--muted);font-size:clamp(1rem,2.4vw,1.25rem)}
+    .hero .cta{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
+
+    /* value strip */
+    .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+    .strip .wrap{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;align-items:center;padding:1.4rem clamp(1.25rem,4vw,3rem);font-family:"Big Shoulders Display",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(1rem,2.5vw,1.35rem)}
+    .strip span{color:var(--muted)}
+    .strip b{color:var(--ink);font-weight:600}
+    .dot{color:var(--amber)}
+
+    /* feature blocks */
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border-bottom:1px solid var(--line)}
+    .feature .photo{min-height:430px}
+    .feature .copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,5vw,4.5rem)}
+    .feature.flip .photo{order:2}
+    .feature .num{font-family:"Big Shoulders Display",sans-serif;font-weight:700;color:var(--amber);font-size:.9rem;letter-spacing:.2em}
+    .feature h2{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;line-height:.95;font-size:clamp(2rem,4.5vw,3.4rem);margin:.5rem 0 0}
+    .feature .lead{color:var(--muted);margin:1rem 0 1.6rem;max-width:42ch}
+    .feature ul{list-style:none;margin:0 0 1.8rem;display:flex;flex-wrap:wrap;gap:.5rem .9rem}
+    .feature ul li{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);padding:.35rem .7rem;border-radius:2px}
+    .arrowlink{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--amber-hi)}
+    .arrowlink:hover{color:var(--amber)}
+    @media(max-width:820px){.feature{grid-template-columns:1fr}.feature.flip .photo{order:0}.feature .photo{min-height:280px}}
+
+    /* tailored / how it works */
+    .tailored{padding:clamp(3.5rem,8vw,6rem) 0;text-align:center}
+    .tailored h2{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2.2rem,6vw,4rem);line-height:.95;margin:.8rem auto 0;max-width:18ch}
+    .tailored p.sub{color:var(--muted);max-width:54ch;margin:1.2rem auto 0;font-size:1.05rem}
+    .options{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;text-align:left}
+    .opt{background:var(--panel);border:1px solid var(--line);padding:clamp(1.5rem,3vw,2.4rem)}
+    .opt .tag{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+    .opt h3{font-family:"Big Shoulders Display",sans-serif;font-weight:700;text-transform:uppercase;font-size:1.6rem;margin:.4rem 0 .7rem}
+    .opt p{color:var(--muted)}
+    @media(max-width:760px){.options{grid-template-columns:1fr}}
+
+    /* testimonials placeholder */
+    .reviews{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(3rem,6vw,5rem) 0;text-align:center}
+    .reviews .eyebrow{display:block}
+    .reviews .ph{margin:1.5rem auto 0;max-width:60ch;border:1px dashed rgba(244,165,42,.4);border-radius:3px;padding:2.2rem 1.5rem;color:var(--muted)}
+    .reviews .ph strong{color:var(--amber-hi);font-weight:600}
+
+    /* contact */
+    .contact{padding:clamp(3.5rem,8vw,6rem) 0}
+    .contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+    .contact h2{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2rem,5vw,3.4rem);line-height:.95}
+    .contact .lead{color:var(--muted);margin:1.1rem 0 0;max-width:40ch}
+    .contact .deet{margin-top:1.8rem;font-size:.95rem;color:var(--muted)}
+    .contact .deet b{color:var(--ink);font-weight:600}
+    .field{margin-bottom:1rem}
+    .field label{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+    .field input,.field textarea,.field select{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:.75rem .85rem;font-family:inherit;font-size:.95rem;border-radius:2px}
+    .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--amber)}
+    @media(max-width:760px){.contact .grid{grid-template-columns:1fr}}
+
+    footer.foot{border-top:1px solid var(--line);background:var(--bg2);padding:3rem 0 2rem}
+    .foot .grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}
+    .foot .brand{margin-bottom:.6rem}
+    .foot p.tg{color:var(--muted);max-width:30ch;font-size:.92rem}
+    .foot h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:.9rem}
+    .foot ul{list-style:none}
+    .foot ul li{margin-bottom:.55rem}
+    .foot ul a{color:var(--muted);font-size:.9rem}
+    .foot ul a:hover{color:var(--ink)}
+    .legal{border-top:1px solid var(--line);margin-top:2.4rem;padding-top:1.4rem;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+    @media(max-width:760px){.foot .grid{grid-template-columns:1fr 1fr}}
+
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#"><span class="k">K</span> Audiovisual</a>
+      <nav><ul>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></nav>
+      <a class="btn solid" href="#contact">Request a quote</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="photo" data-cap="[ Hero photo / short video: a full rig glowing at a real event — QSC tops on stands, amber wash, a full room ]"><span class="ico">Photo · hero</span></div>
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Sound &amp; Lighting Rentals · Greater Toronto Area</span>
+      <h1 class="display">Event-ready <span class="amber">sound &amp; light.</span></h1>
+      <p>Professional gear for weddings, bands, receptions and galas across the GTA. Pick it up yourself, or we deliver, rig, and line-check — you run the show.</p>
+      <div class="cta">
+        <a class="btn solid" href="#packages">See the packages</a>
+        <a class="btn" href="#contact">Request a quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <b>Professional gear</b><span class="dot">/</span><b>Lean pricing</b><span class="dot">/</span><b>Delivered &amp; set up</b>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="packages">
+
+    <div class="feature">
+      <div class="photo" data-cap="[ Photo: Package 1 kit — powered tops, a small mixer, two mics, on stands ]"><span class="ico">Photo · package one</span></div>
+      <div class="copy">
+        <span class="num">PACKAGE ONE</span>
+        <h2 class="display">Social &amp; Speech</h2>
+        <p class="lead">Clean, reliable sound for speeches, ceremonies, small parties and acoustic sets. Up to roughly 100 guests.</p>
+        <ul><li>Powered speakers</li><li>Compact mixer</li><li>Wired &amp; wireless mics</li><li>All cabling &amp; stands</li></ul>
+        <a class="arrowlink" href="#contact">What's included →</a>
+      </div>
+    </div>
+
+    <div class="feature flip">
+      <div class="photo" data-cap="[ Photo: the QSC system — two K12 tops + two KSub subs — set up at a reception ]"><span class="ico">Photo · package two</span></div>
+      <div class="copy">
+        <span class="num">PACKAGE TWO</span>
+        <h2 class="display">Full Event &amp; Band</h2>
+        <p class="lead">The flagship QSC system with subs and a 16-channel console — built for live bands, DJs, receptions and galas of 100–300.</p>
+        <ul><li>QSC tops + subs</li><li>16-ch console</li><li>Stage monitors</li><li>Full mic package</li></ul>
+        <a class="arrowlink" href="#contact">What's included →</a>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="photo" data-cap="[ Photo: amber PAR wash on a draped wall / dance floor at night ]"><span class="ico">Photo · lighting</span></div>
+      <div class="copy">
+        <span class="num">ADD-ON</span>
+        <h2 class="display">Lighting</h2>
+        <p class="lead">Layer light onto any audio package — from a warm wash that sets the mood to movement and haze for the dance floor.</p>
+        <ul><li>PAR wash</li><li>Scanners</li><li>Haze / fog</li><li>Dimmer control</li></ul>
+        <a class="arrowlink" href="#contact">Add to a package →</a>
+      </div>
+    </div>
+
+    <div class="feature flip">
+      <div class="photo" data-cap="[ Photo: a wedding reception — head table, warm uplighting, PA discreetly placed ]"><span class="ico">Photo · the wedding</span></div>
+      <div class="copy">
+        <span class="num">SIGNATURE BUNDLE</span>
+        <h2 class="display">The Wedding</h2>
+        <p class="lead">A ready-made package built for the day: ceremony sound, speeches and toasts, a dance-floor system, and a warm room wash — delivered and set up.</p>
+        <ul><li>Ceremony + reception</li><li>Wireless mics</li><li>Dance-floor PA</li><li>Room wash</li></ul>
+        <a class="arrowlink" href="#contact">Plan your day →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TAILORED / HOW IT WORKS -->
+  <section id="how" class="tailored">
+    <div class="wrap">
+      <span class="eyebrow">Built around your event</span>
+      <h2 class="display">Tailored to the room, the crowd, and the night.</h2>
+      <p class="sub">Tell us the venue, the headcount, and what's happening — we match the right gear and one of two ways to get it to you.</p>
+      <div class="options">
+        <div class="opt">
+          <span class="tag">Option 01 · DIY</span>
+          <h3 class="display">Pick up</h3>
+          <p>Collect your package from our GTA storage, set it up yourself, and bring it back. The leanest price, for the hands-on host or working band.</p>
+        </div>
+        <div class="opt">
+          <span class="tag">Option 02 · Done for you</span>
+          <h3 class="display">Delivered &amp; set up</h3>
+          <p>We deliver, rig, and line-check on site, then you run the show during your event. We come back to strike. No operator needed by default.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS PLACEHOLDER -->
+  <section class="reviews">
+    <div class="wrap">
+      <span class="eyebrow">Client feedback</span>
+      <div class="ph"><strong>Reviews will appear here as they come in.</strong><br>As the first events go out, real client quotes — name, event type, and city — replace this block.</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">Get a quote</span>
+        <h2 class="display">Tell us about your event.</h2>
+        <p class="lead">Send the date, venue, and rough headcount and we'll come back with a package and a flat price for the day.</p>
+        <p class="deet">
+          <b>Email</b> &nbsp; hello@kaudiovisual.ca<br>
+          <b>Service area</b> &nbsp; Toronto &amp; the GTA<br>
+          <b>Hours</b> &nbsp; By appointment
+        </p>
+      </div>
+      <div>
+        <div class="field"><label>Name</label><input type="text" placeholder="Your name" /></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
+        <div class="field"><label>Event date &amp; venue</label><input type="text" placeholder="e.g. Aug 16 · The Symes, Toronto" /></div>
+        <div class="field"><label>What are you planning?</label><textarea rows="4" placeholder="Headcount, type of event, any gear you know you need…"></textarea></div>
+        <a class="btn solid" href="#" onclick="return false">Send request</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <div class="brand"><span class="k" style="color:var(--amber-hi)">K</span> Audiovisual</div>
+          <p class="tg">Professional sound &amp; lighting rentals for events across the Greater Toronto Area.</p>
+        </div>
+        <div>
+          <h4>Packages</h4>
+          <ul><li><a href="#packages">Social &amp; Speech</a></li><li><a href="#packages">Full Event &amp; Band</a></li><li><a href="#packages">Lighting</a></li><li><a href="#packages">The Wedding</a></li></ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="#how">How it works</a></li><li><a href="#contact">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul><li><a href="#contact">hello@kaudiovisual.ca</a></li><li><a href="#contact">Request a quote</a></li></ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 K Audiovisual · Toronto / GTA</span>
+        <span>Sound &amp; lighting rentals</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
